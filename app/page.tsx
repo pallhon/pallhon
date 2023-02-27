@@ -1,10 +1,6 @@
 import { Suspense } from "react";
-import dynamic from "next/dynamic";
 
 import MotionText from "./MotionText";
-import Balancer from "react-wrap-balancer";
-
-const Text = dynamic(() => import("./MotionText"));
 
 export default async function Home() {
   return (
@@ -16,7 +12,7 @@ export default async function Home() {
           </h1>
         }
       >
-        <Text text="Pallhon" />
+        <MotionText text="Pallhon" />
       </Suspense>
     </main>
   );
