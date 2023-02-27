@@ -24,7 +24,12 @@ async function getGradient() {
 
 export const metadata: Metadata = {
   title: "Pallhon",
-  description: "family is everything <3",
+  description: "family is everything <3 make sure you love them!",
+  creator: "Pallhon",
+  keywords: "Pallhon, Pallhorn",
+  alternates: {
+    canonical: "https://pallhon.de",
+  },
 };
 
 export default async function RootLayout({
