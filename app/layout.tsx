@@ -45,7 +45,7 @@ export default async function RootLayout({
   const degree = degreeArray[Math.floor(Math.random() * degreeArray.length)];
 
   // console.log(degree);
-  console.log(gradient);
+  // console.log(gradient);
   return (
     <html lang="en">
       <body
