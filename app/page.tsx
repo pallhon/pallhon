@@ -1,91 +1,58 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import MotionText from "./MotionText";
+import Link from "next/link";
+import Balancer from "react-wrap-balancer";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+async function getGradient() {
+  const res = await fetch(
+    "https://raw.githubusercontent.com/ghosh/uiGradients/master/gradients.json",
+    { next: { revalidate: 60 } }
+  );
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+
+export default async function Home() {
+  const data = await getGradient();
+
+  const gradient = data[Math.floor(Math.random() * data.length)];
+  const degreeArray = [0, 45, 90, 135, 180, 225, 270, 315, 45, 45];
+
+  const degree = degreeArray[Math.floor(Math.random() * degreeArray.length)];
+
+  // console.log(degree);
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main
+      className="h-screen w-full overflow-x-hidden mix-blend-plus-lighter	invert flex flex-col justify-center items-center relative"
+      style={{
+        backgroundImage: `linear-gradient(${degree}deg, ${gradient.colors.join(
+          ","
+        )})`,
+      }}
+    >
+      <MotionText text="Pallhon" />
+      <footer className="absolute bottom-8 font-medium">
+        <Balancer>
+          <span className="">Family is everything {"<3"} </span>
+          <span>&#183;</span>
+          <span> </span>
+          <Link
+            href={`https://uigradients.com/#${gradient.name
+              .replace(/\s/g, "")
+              .trim()}`}
+            className="hover:underline "
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+            Theme: {gradient.name}
+          </Link>
+        </Balancer>
+      </footer>
     </main>
-  )
+  );
 }
