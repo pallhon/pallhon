@@ -11,3 +11,9 @@ yarn dev
 # or
 pnpm dev
 ```
+
+## TODO
+
+- [ ] Add ISR to /app
+- [ ] add OG Image using @vercel/og
+- [ ] better favicon
