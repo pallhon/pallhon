@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import MotionText from "./MotionText";
-import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -38,19 +37,27 @@ export default async function Home() {
       }}
     >
       <MotionText text="Pallhon" />
-      <footer className="absolute bottom-8 font-medium">
+      <footer className="absolute bottom-8 font-medium group 	">
         <Balancer>
-          <span className="">Family is everything {"<3"} </span>
+          <span className="">
+            Family is everything{" "}
+            <span className=" group-hover:hidden inline-block transition duration-200 ">
+              {"<3"}
+            </span>
+            <span className=" group-hover:inline-block hidden transition duration-200 ">
+              {"❤️"}
+            </span>{" "}
+          </span>
           <span>&#183;</span>
           <span> </span>
-          <Link
+          <a
             href={`https://uigradients.com/#${gradient.name
               .replace(/\s/g, "")
               .trim()}`}
             className="hover:underline "
           >
             Theme: {gradient.name}
-          </Link>
+          </a>
         </Balancer>
       </footer>
     </main>
