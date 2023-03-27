@@ -13,7 +13,7 @@
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
     "@vercel/edge-config": "^0.1.2",
-    "@vercel/og": "^0.4.0",
+    "@vercel/og": "^0.4.1",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "framer-motion": "^10.6.1",
