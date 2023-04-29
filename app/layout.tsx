@@ -8,10 +8,10 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-async function getGradient() {
+export async function getGradient() {
   const res = await fetch(
     "https://raw.githubusercontent.com/ghosh/uiGradients/master/gradients.json",
-    { next: { revalidate: 60 } }
+    { next: { revalidate: 120 } }
   );
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
