@@ -1,7 +1,8 @@
 import { ImageResponse } from "next/server";
-import { getGradient } from "./layout";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
+
+import { getGradient } from "@/lib/api";
 
 export const alt = "Pallhon.com";
 export const size = {
