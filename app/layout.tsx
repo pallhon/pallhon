@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/opengraph-image",
+        url: "images: ['https://nextjs.org/og.png'],",
         width: 1200,
         height: 630,
         alt: "Pallhon",
@@ -44,6 +44,7 @@ export const metadata: Metadata = {
     title: "Pallhon",
     description:
       "Pallhon.com - family is everything <3 make sure you love them!",
+    images: ["https://nextjs.org/og.png"],
   },
 };
 
