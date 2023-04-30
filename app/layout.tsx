@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "Pallhon",
   description: "family is everything <3 make sure you love them!",
   creator: "Pallhon",
-  keywords: "Pallhon, Pallhorn",
+  keywords: "Pallhon, Pallhorn, Pallhon.com, Pallhon.de",
   alternates: {
     canonical: "https://pallhon.com",
     languages: {
