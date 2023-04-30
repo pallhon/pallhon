@@ -28,7 +28,28 @@ export const metadata: Metadata = {
   creator: "Pallhon",
   keywords: "Pallhon, Pallhorn",
   alternates: {
-    canonical: "https://pallhon.de",
+    canonical: "https://pallhon.com",
+    languages: {
+      "en-US": "https://pallhon.com",
+      "de-DE": "https://pallhon.de",
+    },
+  },
+  openGraph: {
+    title: {
+      default: "Pallhon",
+      template: "%s | Pallhon",
+    },
+    description: "family is everything <3 make sure you love them!",
+    url: "https://pallhon.com",
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Pallhon",
+      },
+    ],
   },
 };
 

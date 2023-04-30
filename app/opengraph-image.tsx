@@ -2,7 +2,6 @@ import { ImageResponse } from "next/server";
 import { getGradient } from "./layout";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
-import Balancer from "react-wrap-balancer";
 
 export const alt = "Pallhon.com";
 export const size = {
@@ -28,7 +27,6 @@ export default async function og() {
             ","
           )})`,
           fontFamily: "Inter",
-          fontWeight: 900,
         }}
       >
         <h1 tw="text-9xl text-white font-sans font-black tracking-tight  ">
