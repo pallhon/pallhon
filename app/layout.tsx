@@ -39,6 +39,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pallhon",
+    description:
+      "Pallhon.com - family is everything <3 make sure you love them!",
+  },
 };
 
 export default async function RootLayout({
