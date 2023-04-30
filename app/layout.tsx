@@ -70,7 +70,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} font-sans subpixel-antialiased min-h-screen w-full overflow-x-hidden  flex flex-col justify-center items-center`}
+        className={`${inter.variable} h-screen font-sans subpixel-antialiased min-h-screen w-full overflow-x-hidden  flex flex-col justify-center items-center`}
         style={{
           backgroundImage: `linear-gradient(${degree}deg, ${gradient.colors.join(
             ","

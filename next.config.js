@@ -3,8 +3,8 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     appDir: true,
-    typedRoutes: true,
+    // typedRoutes: true,
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
