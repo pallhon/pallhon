@@ -15,7 +15,7 @@ const MotionText = ({ text = "Pallhon" }: { text: String }) => {
         right: 30,
         bottom: 15,
       }}
-      className=" text-5xl md:text-7xl xl:text-9xl font-bold bg-blend-darken"
+      className="cursor-pointer text-5xl md:text-7xl xl:text-9xl font-bold bg-blend-darken"
     >
       {text}
     </motion.h1>

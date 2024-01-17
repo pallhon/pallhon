@@ -1,4 +1,4 @@
-import { ImageResponse } from "next/server";
+import { ImageResponse } from "next/og";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 
@@ -27,10 +27,10 @@ export default async function og() {
           backgroundImage: `linear-gradient(${degree}deg, ${gradient.colors.join(
             ","
           )})`,
-          fontFamily: "Inter",
+          
         }}
       >
-        <h1 tw="text-9xl text-white font-sans font-black tracking-tight  ">
+        <h1 tw="text-9xl text-white font-sans font-black tracking-tight" >
           Pallhon
         </h1>
       </div>

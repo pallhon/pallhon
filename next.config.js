@@ -1,10 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  swcMinify: true,
-  experimental: {
-    appDir: true,
-    // typedRoutes: true,
-  },
-};
+const nextConfig = {}
 
 module.exports = nextConfig;
