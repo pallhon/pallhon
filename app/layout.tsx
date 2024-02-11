@@ -11,6 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://pallhon.com'),
   title: "Pallhon",
   description: "family is everything <3 make sure you love them!",
   creator: "Pallhon",
