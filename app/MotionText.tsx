@@ -5,17 +5,31 @@ import { motion } from "motion/react";
 const MotionText = ({ text = "Pallhon" }: { text: String }) => {
   return (
     <motion.h1
-      whileHover={{ scale: 1.3 }}
-      whileTap={{ scale: 0.8 }}
-      // transition={{ duration: 0.5, ease: "easeInOut" }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      whileHover={{ 
+        scale: 1.1,
+        rotate: [0, -5, 5, -5, 0],
+        transition: {
+          duration: 0.5,
+          rotate: {
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 0.5
+          }
+        }
+      }}
+      whileTap={{ scale: 0.9 }}
       drag
       dragConstraints={{
-        top: -15,
-        left: -30,
-        right: 30,
-        bottom: 15,
+        top: -50,
+        left: -100,
+        right: 100,
+        bottom: 50,
       }}
-      className="cursor-pointer text-5xl md:text-7xl xl:text-9xl font-bold bg-blend-darken"
+      dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
+      className="cursor-pointer text-5xl md:text-7xl xl:text-9xl font-bold bg-blend-darken select-none"
     >
       {text}
     </motion.h1>
