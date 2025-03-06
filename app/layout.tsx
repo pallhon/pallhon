@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import Balancer from "react-wrap-balancer";
+import { Analytics } from "@vercel/analytics/react"
 
 import { getGradient } from "@/lib/api";
 
@@ -97,6 +98,7 @@ export default async function RootLayout({
             </a>
           </Balancer>
         </footer>
+        <Analytics />
       </body>
     </html>
   );
