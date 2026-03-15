@@ -10,6 +10,10 @@
   If we ever want to remove these styles, we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
+body {
+  transition: background-image 1s ease-in-out;
+}
+
 @layer base {
   *,
   ::after,

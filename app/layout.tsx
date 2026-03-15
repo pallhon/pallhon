@@ -2,9 +2,10 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
-import { getGradient } from "@/lib/api";
+import { getGradient, getGradientExpiry } from "@/lib/api";
 import metadata from "./config/metadata";
 import Balancer from "react-wrap-balancer";
+import { GradientRefresher } from "./GradientRefresher";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,20 +20,21 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const gradient = await getGradient();
-  const degreeArray = [0, 45, 90, 135, 180, 225, 270, 315, 45, 45];
-  const degree = degreeArray[Math.floor(Math.random() * degreeArray.length)];
+  const expiry = getGradientExpiry();
 
   return (
     <html lang="en">
       <body
         className={`${inter.variable} h-screen font-sans subpixel-antialiased min-h-screen w-full overflow-x-hidden flex flex-col justify-center items-center`}
         style={{
-          backgroundImage: `linear-gradient(${degree}deg, ${gradient.colors.join(
+          backgroundImage: `linear-gradient(${gradient.degree}deg, ${gradient.colors.join(
             ","
           )})`,
         }}
+        data-gradient-expiry={expiry}
       >
         {children}
+        <GradientRefresher />
         <footer className="absolute bottom-8 font-medium group mix-blend-plus-lighter	invert	">
           <Balancer>
             <span className="">
